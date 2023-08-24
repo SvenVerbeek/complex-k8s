@@ -1,13 +1,11 @@
 version: '3'
 services:
   client:
-    image: 'svenverbeek/complex:client'
+    image: 'rallycoding/multi-client'
     mem_limit: 128m
     hostname: client
-    environment:
-      - WDS_SOCKET_PORT=0
   server:
-    image: 'svenverbeek/complex:server'
+    image: 'rallycoding/multi-server'
     mem_limit: 128m
     hostname: api
     environment:
@@ -19,14 +17,14 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: 'svenverbeek/complex:worker'
+    image: 'rallycoding/multi-worker'
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: 'svenverbeek/complex:nginx'
+    image: 'rallycoding/multi-nginx'
     mem_limit: 128m
     hostname: nginx
     ports:
