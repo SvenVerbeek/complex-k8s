@@ -15,7 +15,7 @@ jobs:
     
       - name: Test
         run: |-
-          docker login -u ${{ secrets.DOCKER.USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker build -t svenverbeek/demo-client -f ./client/Dockerfile.dev ./client
           docker run -e CI=true svenverbeek/demo-client npm test
 
