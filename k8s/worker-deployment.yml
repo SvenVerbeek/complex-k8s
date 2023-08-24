@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: svenverbeek/complex:worker
+          image: svenverbeek/complex-worker
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
