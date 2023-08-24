@@ -51,9 +51,9 @@ jobs:
           docker push svenverbeek/complex-server:latest
           docker push svenverbeek/complex-worker:latest
 
-          docker push svenverbeek/complex-client:{{ env.SHA }}
-          docker push svenverbeek/complex-server:{{ env.SHA }}
-          docker push svenverbeek/complex-worker:{{ env.SHA }}
+          docker push svenverbeek/complex-client:${{ env.SHA }}
+          docker push svenverbeek/complex-server:${{ env.SHA }}
+          docker push svenverbeek/complex-worker:${{ env.SHA }}
 
       - name: Apply
         run: |-
