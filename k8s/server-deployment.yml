@@ -8,11 +8,11 @@ spec:
     matchLabels:
       component: server
   template:
-    metadata: 
-      labels: 
+    metadata:
+      labels:
         component: server
     spec:
-      containers: 
+      containers:
         - name: server
           image: svenverbeek/complex-server
           ports:
